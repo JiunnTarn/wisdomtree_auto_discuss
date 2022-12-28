@@ -65,5 +65,5 @@
 
 ## 最后
 
-欢迎提 [issue](https://github.com/JiunnTarn/wisdomtree-auto-discuss/issues/new) 
+欢迎提 [issue](https://github.com/JiunnTarn/wisdomtree_auto_discuss/issues) 
 
