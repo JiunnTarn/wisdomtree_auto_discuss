@@ -1,7 +1,7 @@
 # 智慧树知到自动讨论
 还在为形式主义小水课互动分不高而头疼？**为什么我苦苦回答了 139 个问题，收获了 280 个点赞，居然还只有 8 分？？？？？**
 
-![image-20221228152942540.png](https://bj.bcebos.com/baidu-rmb-video-cover-1/8811160ef51d513bf019bb1c8f120303.png)
+![image-20221228153507081.png](https://bj.bcebos.com/baidu-rmb-video-cover-1/6a27c6a65caa86f3d0ebb4318ac469d8.png)
 
 不要怕，让这个脚本拯救你！让人工智能成为刺破形式主义的利剑！
 
