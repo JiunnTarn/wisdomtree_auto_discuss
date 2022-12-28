@@ -1,7 +1,7 @@
 # 智慧树知到自动讨论
 还在为形式主义小水课互动分不高而头疼？**为什么我苦苦回答了 139 个问题，收获了 280 个点赞，居然还只有 8 分？？？？？**
 
-![Snipaste_2022-12-28_13-50-46.png](https://bj.bcebos.com/baidu-rmb-video-cover-1/8da228d3840f19ebedb2755224f061b0.png)
+![image-20221228152942540.png](https://bj.bcebos.com/baidu-rmb-video-cover-1/8811160ef51d513bf019bb1c8f120303.png)
 
 不要怕，让这个脚本拯救你！让人工智能成为刺破形式主义的利剑！
 
@@ -29,7 +29,7 @@
 
 2. 打开课程回答的页面，就是这个
 
-   ![Snipaste_2022-12-28_14-19-13.png](https://bj.bcebos.com/baidu-rmb-video-cover-1/5479f5a6746bec9d0ec2fee907b56b78.png) 
+   ![image-20221228153213569.png](https://bj.bcebos.com/baidu-rmb-video-cover-1/9679c446ab8cf668b8137775f153ea7b.png)
 
    这时看网址，应该类似这样
 
