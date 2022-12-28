@@ -1,0 +1,22 @@
+{
+  "name": "wisdomtree-auto-discuss",
+  "version": "1.0.0",
+  "description": "智慧树自动讨论",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "author": "JiunnTarn",
+  "license": "MIT",
+  "dependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@types/qs": "^6.9.7",
+    "axios": "^1.2.1",
+    "axios-retry": "^3.3.1",
+    "crypto-js": "^4.1.1",
+    "openai": "^3.1.0",
+    "qs": "^6.11.0",
+    "ts-node": "^10.9.1",
+    "yaml": "^2.2.0"
+  }
+}
