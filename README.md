@@ -27,9 +27,9 @@
 
 1. 克隆本仓库，找到仓库根目录下的 `config.yaml` 并打开
 
-2. 打开课程回答的页面，就是这个
+2. 打开课程的热门讨论页面，就是这个
 
-   ![image-20221228153213569.png](https://bj.bcebos.com/baidu-rmb-video-cover-1/9679c446ab8cf668b8137775f153ea7b.png)
+   ![image-20221228153929921.png](https://bj.bcebos.com/baidu-rmb-video-cover-1/e159c8ee909f8829e31335476a20e777.png)
 
    这时看网址，应该类似这样
 
