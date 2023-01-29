@@ -62,6 +62,12 @@
 - [ ] 实现二维码登录
 
 
+## 致谢
+
+- [【JS逆向】知到/智慧树 加密参数逆向及Python实现](https://www.bilibili.com/read/cv15620703) 
+
+- [JS NICE | Software Reliability Lab in ETH](http://jsnice.org/) 
+
 
 ## 最后
 
