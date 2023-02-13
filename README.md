@@ -68,6 +68,8 @@
 
 - [JS NICE | Software Reliability Lab in ETH](http://jsnice.org/) 
 
+- [luoyily/zhihuishu-tool: 知到，智慧树 API 及工具](https://github.com/luoyily/zhihuishu-tool)
+
 
 ## 最后
 
