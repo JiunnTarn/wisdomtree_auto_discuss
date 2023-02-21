@@ -70,6 +70,16 @@
 
 
 
+## 致谢
+
+ - [【JS 逆向】知到 / 智慧树 加密参数逆向及 Python 实现](https://www.bilibili.com/read/cv15620703) 
+
+- [JS NICE | Software Reliability Lab in ETH](http://jsnice.org/) 
+
+- [luoyily/zhihuishu-tool: 知到，智慧树 API 及工具](https://github.com/luoyily/zhihuishu-tool)
+
+
+
 ## 最后
 
 欢迎提 [issue](https://github.com/JiunnTarn/wisdomtree_auto_discuss/issues) 
