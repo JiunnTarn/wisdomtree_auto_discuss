@@ -1,15 +1,21 @@
 # [必要] 课程 id，url 里有
 courseId: 0000000000
+
 # [必要] url 里有
 recruitId: 000000
+
 # [必要] 从第几页开始回答（一页50题）
 from: 0
+
 # [必要] 回答到第几页（含）
 to: 0
-# [必要] 智慧树 cookie 里有
-wisdomtreeJtCas: "xxxxxxxxxxxxxxxxx"
+
 # [必要] OpenAI 的 Api Key
 openAIApiKey: "xxxxxxxxxxxxxxxxx"
-# [可为空] 其他智慧树账户的 jt-cas，用于点赞
+
+# [可选] 智慧树 cookie 里有
+# wisdomtreeJtCas: "xxxxxxxxxxxxxxxxx"
+
+# [可选] 其他智慧树账户的 jt-cas，用于点赞
 # viceWisdomtreeJtCasList:
 #   - "xxxxxxxxxxxxxxxxx"

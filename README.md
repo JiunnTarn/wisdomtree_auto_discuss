@@ -37,38 +37,37 @@
 
    找到自己你的课程的 `courseId` 和 `recruitId` ，填入第一步打开的 `config.yaml`
 
-3. 在课程回答页面右键，选择检查
+3. （可选）在课程回答页面右键，选择检查
 
    ![image-20221228143341912.png](https://bj.bcebos.com/baidu-rmb-video-cover-1/a82ab90156be82cbc6c414caa053a8aa.png)
 
    找到 `应用程序` 选项卡，在左侧找到 `Cookie` 下的 `https://qah5.zhihuishu.com` ，在右侧找到 `jt-cas` ，将它的值填入 `config.yaml`
+   
+      > 如果你没有在这一步填入 `jt-cas`，则运行时将使用二维码登录，并且默认不会记住登录状态。如果你想下次自动登录，可以在以下两种方案中间选择一种：
+   >
+   > - 完成这一步
+   >
+   > - 将 `src/auth.ts` 第 40 行的 `overrideConfig()` 取消注释，这相当于自动执行这一步，但请注意 **这会重写 `config.yaml`** 
 
 4. 将 [前期准备](#前期准备) 环节申请到的 `API Key` 填入 `config.yaml`
 
 5. 想想你准备回答几题，一页是 `50` 题，将起始页数 `from` 和终止页数 `to` 填入 `config.yaml` 
 
-5. 如果你有同学互相点赞刷分，可以将他们的 `jt-cas` 填入 `config.yaml` 中的 `viceWisdomtreeJtCasList` ，将会自动点赞
+5. （可选）如果你有同学互相点赞刷分，可以将他们的 `jt-cas` 填入 `config.yaml` 中的 `viceWisdomtreeJtCasList` ，将会自动点赞
 
 5. 保存  `config.yaml` 
 
-6. 打开终端，导航到根目录，执行 `npm i`
+9. 打开终端，导航到根目录，执行 `npm i`
 
-7. 执行 `npm start` ，然后就好啦😋
-
-
-
-## todo（大概率会鸽🤥）
-
-- [ ] 实现二维码登录
+9. 执行 `npm start` ，然后就好啦😋
 
 
-## 致谢
 
-- [【JS逆向】知到/智慧树 加密参数逆向及Python实现](https://www.bilibili.com/read/cv15620703) 
 
-- [JS NICE | Software Reliability Lab in ETH](http://jsnice.org/) 
+## todo ~~（大概率会鸽🤥）~~
 
-- [luoyily/zhihuishu-tool: 知到，智慧树 API 及工具](https://github.com/luoyily/zhihuishu-tool)
+- [x] ~~实现二维码登录~~
+
 
 
 ## 最后

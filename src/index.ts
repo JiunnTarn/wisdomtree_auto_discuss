@@ -1,7 +1,10 @@
 import { getQuestionList, canAnswered, getAnswer, saveAnswer, likeAnswer, likeAnswerVice } from "./request"
 import { appConfig } from "./config"
+import { login } from "./auth"
 
 async function start() {
+  while(!await login(false)) {}
+
   for (var i = appConfig.from; i <= appConfig.to; ++i) {
     const questionList = await getQuestionList(i)
     for (let question of questionList) {

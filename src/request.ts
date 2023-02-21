@@ -3,6 +3,7 @@ import { appConfig } from "./config"
 import { QuestionInfo } from "./types"
 import axiosRetry from "axios-retry"
 import { encrypt, rsaEncrypt } from "./enc"
+import { login } from "./auth"
 import { Configuration, OpenAIApi } from "openai"
 
 const configuration = new Configuration({
@@ -25,10 +26,19 @@ function getSender(authorization?: string) {
                 return data
             }
         },
+        maxRedirects: 0
     })
     sender.interceptors.response.use(function (response) {
         return response;
     }, function (error) {
+        // 登录的 cookie 是在一个状态码为 302 的响应中获取的
+        // 但是 axios 似乎无法手动处理 302 响应
+        // 因此设置了 maxRedirects=0
+        // 这样导致这个重定向响应会进入 error 处理流程
+        // 所以在这里对 302 响应进行特殊处理
+        if ((error as AxiosError).response?.status == 302) {
+            return /jt-cas=(.*?); Domain=.zhihuishu.com;/.exec(error.response.headers['set-cookie'])?.[1]
+        }
         if ((error as AxiosError).response?.status == 401) {
             throw "智慧树 jt-cas 已过期或非法，请检查 config.yaml"
         }
@@ -55,6 +65,17 @@ async function getDynStr(): Promise<string> {
         console.log(resp)
         throw "获取 dynStr 失败"
     }
+}
+
+export async function getLoginQRToken(): Promise<string> {
+    let resp = await getSender().get('https://passport.zhihuishu.com/qrCodeLogin/getLoginQrImg')
+    return resp.data.qrToken
+}
+
+export async function loginByOncePassword(oncePassword: string): Promise<string> {
+    let url = 'https://passport.zhihuishu.com/login?pwd=' + oncePassword + '&service=https://onlineservice-api.zhihuishu.com/login/gologin'
+    let resp = await getSender().get(url)
+    return resp.toString()
 }
 
 export async function getQuestionList(page: number): Promise<QuestionInfo[]> {
