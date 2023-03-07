@@ -4,7 +4,6 @@ export interface AppConfig {
     from: number,
     to: number,
     wisdomtreeJtCas: string,
-    openAIApiKey: string,
     viceWisdomtreeJtCasList?: string[],
 }
 
