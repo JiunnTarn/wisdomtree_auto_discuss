@@ -13,13 +13,11 @@
 
 ### 前期准备
 
-1. ~~你需要准备一个 OpenAI 账号，注册方法自行研究，注册好以后在 [Account API Keys - OpenAI API](https://beta.openai.com/account/api-keys) 申请一个 `API Key` 。~~
+1. 你需要准备一个 OpenAI 账号，注册方法自行研究，注册好以后在 [Account API Keys - OpenAI API](https://beta.openai.com/account/api-keys) 申请一个 `API Key` 。
 
-   ~~请注意每次回答都是要钱的，不过好在 OpenAI 给了你 $18 的免费额度，你可以在 [Account - OpenAI API](https://beta.openai.com/account/usage) 查询剩余额度。~~
+   请注意每次回答都是要钱的，不过好在 OpenAI 给了你 $18 的免费额度，你可以在 [Account - OpenAI API](https://beta.openai.com/account/usage) 查询剩余额度。
 
-   ~~不过，我限定了回答的字数，并且用的是不那么贵的 `curie` 模型（用它还有个原因是最厉害的 `davinci`  模型话实在是太多了），所以花不了多少钱，18 刀绰绰有余。~~
-
-   > 现在更换了回答来源，无需 OpenAI 账号
+   不过，我限定了回答的字数，并且用的是不那么贵的 `curie` 模型（用它还有个原因是最厉害的 `davinci`  模型话实在是太多了），所以花不了多少钱，18 刀绰绰有余。
 
 2. 安装 `Node.js` ，方法也自行研究吧😶‍🌫️
 
@@ -51,7 +49,7 @@
    >
    > - 将 `src/auth.ts` 第 40 行的 `overrideConfig()` 取消注释，这相当于自动执行这一步，但请注意 **这会重写 `config.yaml`** 
 
-4. ~~将 [前期准备](#前期准备) 环节申请到的 `API Key` 填入 `config.yaml`~~
+4. 将 [前期准备](#前期准备) 环节申请到的 `API Key` 填入 `config.yaml`
 
 5. 想想你准备回答几题，一页是 `50` 题，将起始页数 `from` 和终止页数 `to` 填入 `config.yaml` 
 
