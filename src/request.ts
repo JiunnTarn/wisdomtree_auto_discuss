@@ -7,7 +7,7 @@ import { encrypt, rsaEncrypt } from "./enc"
 function getSender(authorization?: string) {
     const sender = axios.create({
         headers: {
-            'Content-Type': authorization == 'Bearer' ? 'application/json' : 'application/x-www-form-urlencoded; charset=UTF-8',
+            'Content-Type': authorization?.startsWith("Bearer") ? 'application/json' : 'application/x-www-form-urlencoded; charset=UTF-8',
             'X-Requested-With': 'XMLHttpRequest',
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0',
             'Authorization': authorization ? authorization : appConfig.wisdomtreeJtCas,
@@ -33,7 +33,7 @@ function getSender(authorization?: string) {
             return /jt-cas=(.*?); Domain=.zhihuishu.com;/.exec(error.response.headers['set-cookie'])?.[1]
         }
         if ((error as AxiosError).response?.status == 401) {
-            throw "智慧树 jt-cas 已过期或非法，请检查 config.yaml"
+            throw "智慧树 jt-cas 或 apiKey 已过期或非法，请检查 config.yaml"
         }
     });
     axiosRetry(sender, {
@@ -107,9 +107,9 @@ export async function canAnswered(questionId: number): Promise<boolean> {
 }
 
 export async function getAnswer(prompt: string): Promise<string> {
-    const url = 'https://api-chat-2.zecoba.cn/v1/chat/completions'
+    const url = (appConfig.apiHost? appConfig.apiHost : "https://api.openai.com") + '/v1/chat/completions'
     const body = '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"' + prompt + '？请简短回答，控制在5-15个字（不计标点）。谢谢！"}]}';
-    let resp = await getSender("Bearer").post(url, body)
+    let resp = await getSender("Bearer " + appConfig.apiKey).post(url, body)
     if (resp.status == 200) {
         return resp.data.choices[0].message.content.replace(/\n/g, "")
     } else {

@@ -3,7 +3,9 @@ export interface AppConfig {
     recruitId: number,
     from: number,
     to: number,
-    wisdomtreeJtCas: string,
+    apiKey: string,
+    apiHost?: string,
+    wisdomtreeJtCas?: string,
     viceWisdomtreeJtCasList?: string[],
 }
 

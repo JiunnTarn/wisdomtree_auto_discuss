@@ -13,15 +13,13 @@
 
 ### 前期准备
 
-1. ~~你需要准备一个 OpenAI 账号，注册方法自行研究，注册好以后在 [Account API Keys - OpenAI API](https://beta.openai.com/account/api-keys) 申请一个 `API Key` 。~~
+1. 你需要准备一个 OpenAI 账号，注册方法自行研究，注册好以后在 [Account API Keys - OpenAI API](https://beta.openai.com/account/api-keys) 申请一个 `API Key` 。
 
-   ~~请注意每次回答都是要钱的，不过好在 OpenAI 给了你 $18 的免费额度，你可以在 [Account - OpenAI API](https://beta.openai.com/account/usage) 查询剩余额度。~~
-
-   ~~不过，我限定了回答的字数，并且用的是不那么贵的 `curie` 模型（用它还有个原因是最厉害的 `davinci`  模型话实在是太多了），所以花不了多少钱，18 刀绰绰有余。~~
-
-   > 现在更换了回答来源，无需 OpenAI 账号
+	> **如果我无法访问 OpenAI 怎么办？**
+	> 你可以选择其他 API 提供商，申请其 `API Key`
 
 2. 安装 `Node.js` ，方法也自行研究吧😶‍🌫️
+
 
 
 
@@ -38,37 +36,32 @@
    ![image-20221228142757474.png](https://bj.bcebos.com/baidu-rmb-video-cover-1/70438a033a5ac7ebf7214e82301daf0a.png)
 
    找到自己你的课程的 `courseId` 和 `recruitId` ，填入第一步打开的 `config.yaml`
+   
+3. 将 [前期准备](#前期准备) 环节申请到的 `API Key` 填入 `config.yaml`
+	
+4. 想想你准备回答几题，一页是 `50` 题，将起始页数 `from` 和终止页数 `to` 填入 `config.yaml` 
 
-3. （可选）在课程回答页面右键，选择检查
+5. （可选）在课程回答页面右键，选择检查
 
    ![image-20221228143341912.png](https://bj.bcebos.com/baidu-rmb-video-cover-1/a82ab90156be82cbc6c414caa053a8aa.png)
 
    找到 `应用程序` 选项卡，在左侧找到 `Cookie` 下的 `https://qah5.zhihuishu.com` ，在右侧找到 `jt-cas` ，将它的值填入 `config.yaml`
    
-      > 如果你没有在这一步填入 `jt-cas`，则运行时将使用二维码登录，并且默认不会记住登录状态。如果你想下次自动登录，可以在以下两种方案中间选择一种：
+   > 如果你没有在这一步填入 `jt-cas`，则运行时将使用二维码登录，并且默认不会记住登录状态。如果你想下次自动登录，可以在以下两种方案中间选择一种：
    >
    > - 完成这一步
    >
    > - 将 `src/auth.ts` 第 40 行的 `overrideConfig()` 取消注释，这相当于自动执行这一步，但请注意 **这会重写 `config.yaml`** 
 
-4. ~~将 [前期准备](#前期准备) 环节申请到的 `API Key` 填入 `config.yaml`~~
+6. （可选）如果你使用的是其他 API 提供商，请将其域名填入 `config.yaml`。这一步请查阅你使用的 API 提供商的使用手册
 
-5. 想想你准备回答几题，一页是 `50` 题，将起始页数 `from` 和终止页数 `to` 填入 `config.yaml` 
+7. （可选）如果你有同学互相点赞刷分，可以将他们的 `jt-cas` 填入 `config.yaml` 中的 `viceWisdomtreeJtCasList` ，将会自动点赞
 
-5. （可选）如果你有同学互相点赞刷分，可以将他们的 `jt-cas` 填入 `config.yaml` 中的 `viceWisdomtreeJtCasList` ，将会自动点赞
-
-5. 保存  `config.yaml` 
+8. 保存  `config.yaml` 
 
 9. 打开终端，导航到根目录，执行 `npm i`
 
-9. 执行 `npm start` ，然后就好啦😋
-
-
-
-
-## todo ~~（大概率会鸽🤥）~~
-
-- [x] ~~实现二维码登录~~
+10. 执行 `npm start` ，然后就好啦😋
 
 
 

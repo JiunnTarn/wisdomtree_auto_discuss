@@ -10,6 +10,12 @@ from: 0
 # [必要] 回答到第几页（含）
 to: 0
 
+# [必要] OpenAI 的 API Key / 自定义 API 提供商的 Key
+apiKey: "xxxxxxxxxxxxxxxxx"
+
+# [可选] 自定义 API 域名
+# apiHost: "https://xxxxxxxxx"
+
 # [可选] 智慧树 cookie 里有
 # wisdomtreeJtCas: "xxxxxxxxxxxxxxxxx"
 
