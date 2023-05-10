@@ -22,3 +22,17 @@ apiKey: "xxxxxxxxxxxxxxxxx"
 # [可选] 其他智慧树账户的 jt-cas，用于点赞
 # viceWisdomtreeJtCasList:
 #   - "xxxxxxxxxxxxxxxxx"
+
+# [可选] 代理
+# proxy: {
+#   host: "127.0.0.1",
+#   port: 0000,
+#   auth: {
+#       username: "xxxxxx",
+#       password: "Pa$sW0Rd"
+#   },
+#   protocol: "http"
+# }
+
+# [可选] 回答间隔时长（毫秒）
+# interval: 20000

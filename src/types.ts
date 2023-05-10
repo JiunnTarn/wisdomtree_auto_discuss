@@ -1,3 +1,5 @@
+import { AxiosProxyConfig } from 'axios'
+
 export interface AppConfig {
     courseId: number,
     recruitId: number,
@@ -7,6 +9,8 @@ export interface AppConfig {
     apiHost?: string,
     wisdomtreeJtCas?: string,
     viceWisdomtreeJtCasList?: string[],
+    proxy?: AxiosProxyConfig,
+    interval?: number
 }
 
 export interface QuestionInfo {

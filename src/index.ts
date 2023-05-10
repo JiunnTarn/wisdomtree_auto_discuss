@@ -11,7 +11,7 @@ async function start() {
       const qid = question.questionId
       const questionContent = question.content
       console.log("============= qid: " + qid + " ==============")
-      console.log("问题：\t" + questionContent)
+      console.log("问题：\t" + questionContent.replace(/\n/g, ""))
       if (await canAnswered(qid)) {
         const answer = await getAnswer(questionContent)
         const answerId = await saveAnswer(answer, qid)
@@ -21,6 +21,9 @@ async function start() {
           for (let viceWisdomtreeJtCas of appConfig.viceWisdomtreeJtCasList) {
             await likeAnswerVice(answerId, viceWisdomtreeJtCas)
           }
+        }
+        if(appConfig.interval) {
+          await new Promise(resolve => setTimeout(() => resolve(''), appConfig.interval));
         }
       } else {
         console.log("你已经回答过这个问题了")

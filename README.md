@@ -13,10 +13,11 @@
 
 ### 前期准备
 
-1. 你需要准备一个 OpenAI 账号，注册方法自行研究，注册好以后在 [Account API Keys - OpenAI API](https://beta.openai.com/account/api-keys) 申请一个 `API Key` 。
+1. 你需要准备一个 OpenAI 账户，注册方法自行研究，注册好以后在 [Account API Keys - OpenAI API](https://beta.openai.com/account/api-keys) 申请一个 `API Key` 。
 
-	> **如果我无法访问 OpenAI 怎么办？**
-	> 你可以选择其他 API 提供商，申请其 `API Key`
+  > **我无法访问 OpenAI 怎么办？**
+  >
+  > 你可以选择其他 API 提供商，申请其 `API Key`
 
 2. 安装 `Node.js` ，方法也自行研究吧😶‍🌫️
 
@@ -25,7 +26,7 @@
 
 ### 使用步骤
 
-1. 克隆本仓库，找到仓库根目录下的 `config.yaml` 并打开
+1. 克隆本仓库，将仓库根目录下的 `config.yaml.example` 更名为 `config.yaml` 并打开
 
 2. 打开课程的热门讨论页面，就是这个
 
@@ -47,15 +48,16 @@
 
    找到 `应用程序` 选项卡，在左侧找到 `Cookie` 下的 `https://qah5.zhihuishu.com` ，在右侧找到 `jt-cas` ，将它的值填入 `config.yaml`
    
-   > 如果你没有在这一步填入 `jt-cas`，则运行时将使用二维码登录，并且默认不会记住登录状态。如果你想下次自动登录，可以在以下两种方案中间选择一种：
+   > 如果你没有在这一步填入 `jt-cas`，则运行时将使用**二维码登录**。 
    >
-   > - 完成这一步
-   >
-   > - 将 `src/auth.ts` 第 40 行的 `overrideConfig()` 取消注释，这相当于自动执行这一步，但请注意 **这会重写 `config.yaml`** 
-
+   
 6. （可选）如果你使用的是其他 API 提供商，请将其域名填入 `config.yaml`。这一步请查阅你使用的 API 提供商的使用手册
 
 7. （可选）如果你有同学互相点赞刷分，可以将他们的 `jt-cas` 填入 `config.yaml` 中的 `viceWisdomtreeJtCasList` ，将会自动点赞
+
+7. （可选）如果你想使用代理，请修改 `config.yaml` 中的 `proxy`
+
+7. （可选）如果你的 OpenAI 账户不是付费账户，大概率会遇到 `429` 错误，这是因为 OpenAI 限制了免费帐户的请求速率，因此你可能还需要设置回答的间隔时长 `interval`
 
 8. 保存  `config.yaml` 
 

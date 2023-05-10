@@ -19,6 +19,7 @@ function getSender(authorization?: string) {
                 return data
             }
         },
+        proxy: appConfig.proxy,
         maxRedirects: 0
     })
     sender.interceptors.response.use(function (response) {
@@ -35,6 +36,8 @@ function getSender(authorization?: string) {
         if ((error as AxiosError).response?.status == 401) {
             throw "智慧树 jt-cas 或 apiKey 已过期或非法，请检查 config.yaml"
         }
+        console.error(error)
+        throw "网络请求错误"
     });
     axiosRetry(sender, {
         retries: 2,
@@ -107,8 +110,8 @@ export async function canAnswered(questionId: number): Promise<boolean> {
 }
 
 export async function getAnswer(prompt: string): Promise<string> {
-    const url = (appConfig.apiHost? appConfig.apiHost : "https://api.openai.com") + '/v1/chat/completions'
-    const body = '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"' + prompt + '？请简短回答，控制在5-15个字（不计标点）。谢谢！"}]}';
+    const url = (appConfig.apiHost ? appConfig.apiHost : "https://api.openai.com") + '/v1/chat/completions'
+    const body = '{"model":"gpt-3.5-turbo","messages":[{"role": "system", "content": "你是一位积极向上的大学生。接下来你将被询问一个问题，请简短回答。无论是什么问题，你的回答去除标点符号后字数应多于5个字，并且少于15个字。你的回答请不要采用Markdown格式。你可以使用标点符号，但是只能使用“，”和“。”"},{"role":"user","content":"' + prompt.replace(/\n/g, "") + '？"}]}';
     let resp = await getSender("Bearer " + appConfig.apiKey).post(url, body)
     if (resp.status == 200) {
         return resp.data.choices[0].message.content.replace(/\n/g, "")
@@ -128,6 +131,9 @@ export async function saveAnswer(answer: string, qid: number): Promise<string> {
     }
     let resp = await getSender().post(url, body)
     if (resp.data.status == "200") {
+        if(!resp.data.rt) {
+            throw "触发智慧树验证码，请登录网页版智慧树回答任意题目，完成验证码后重新运行本脚本"
+        }
         return resp.data.rt.answerId
     } else {
         console.error(resp)
