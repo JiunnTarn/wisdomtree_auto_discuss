@@ -38,7 +38,7 @@ export async function login(force: boolean): Promise<boolean> {
               const wisdomtreeJtCas = await loginByOncePassword(info.oncePassword)
               appConfig.wisdomtreeJtCas = wisdomtreeJtCas
               // overrideConfig()
-              console.log("登录成功")
+              console.log("登录成功，你的智慧树 jt-cas 为：" + wisdomtreeJtCas)
               resolve(true)
               sock.close();
             } else if (info.code == 3) {

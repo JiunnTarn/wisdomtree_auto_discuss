@@ -76,7 +76,14 @@ export async function loginByOncePassword(oncePassword: string): Promise<string>
 
 export async function getQuestionList(page: number): Promise<QuestionInfo[]> {
     page = page * 50
-    let url = 'http://creditqa-api.zhihuishu.com/creditqa/gateway/t/v1/web/qa/getHotQuestionList'
+    let url = ""
+    if (appConfig.questionChannel == "top") {
+        url = 'http://creditqa-api.zhihuishu.com/creditqa/gateway/t/v1/web/qa/getHotQuestionList'
+    } else if (appConfig.questionChannel == "latest") {
+        url = 'https://creditqa-api.zhihuishu.com/creditqa/gateway/t/v1/web/qa/getRecommendList'
+    } else {
+        throw "问题来源配置错误，请检查 config.yaml"
+    }
     let data = '{"courseId":"' + appConfig.courseId + '","pageIndex":' + page + ',"pageSize":50,"recruitId":"' + appConfig.recruitId + '"}'
     let secretStr = encrypt(data, await getDynStr())
     let body = {
@@ -131,7 +138,7 @@ export async function saveAnswer(answer: string, qid: number): Promise<string> {
     }
     let resp = await getSender().post(url, body)
     if (resp.data.status == "200") {
-        if(!resp.data.rt) {
+        if (!resp.data.rt) {
             throw "触发智慧树验证码，请登录网页版智慧树回答任意题目，完成验证码后重新运行本脚本"
         }
         return resp.data.rt.answerId

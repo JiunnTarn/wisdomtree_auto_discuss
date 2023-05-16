@@ -4,6 +4,9 @@ courseId: 0000000000
 # [必要] url 里有
 recruitId: 000000
 
+# [必要] 问题来源："top" -> 热门问题，"latest" -> 最新问题
+questionChannel: "top"
+
 # [必要] 从第几页开始回答（一页50题）
 from: 0
 

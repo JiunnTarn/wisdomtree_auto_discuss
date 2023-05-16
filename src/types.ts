@@ -3,6 +3,7 @@ import { AxiosProxyConfig } from 'axios'
 export interface AppConfig {
     courseId: number,
     recruitId: number,
+    questionChannel: string,
     from: number,
     to: number,
     apiKey: string,
